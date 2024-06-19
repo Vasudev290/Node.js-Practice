@@ -1,6 +1,38 @@
 Node js :-
+---------
 While JavaScript and Node. js both use the same language, 
 they serve different purposes in the web development ecosystem. 
 JavaScript is primarily used for client-side programming, while Node. 
 js allows developers to build server-side applications using JavaScript.
 
+why to use Node.js?
+--------------------
+* Fast & highly scalable
+* Asynchonous & Non-blocking
+* Light weight and efficient to create HTTP Server
+* Same JS programming language for both client & srever
+* Very popular for server-side application devlop
+
+Module:-
+* Collection js file
+*  Each js file have collection of methods  and each method can have parameter.
+
+installiation command:-
+ npm init -y
+ npm install express
+
+ Node.js - Collection of 3 types of module:-
+ *In-bulid module / Core Module
+ * 3rd party Module
+ * Custom Module
+
+Core Module:-
+FS, OS, Path, http
+
+3rd Party Module:-
+Express, MongoDB, Mongooes, Url, Mysql
+
+NPM:-
+*Centralized Repo for js library
+*Used to install 3rd party module
+*Installed module - inside node-module folder  
