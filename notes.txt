@@ -36,3 +36,11 @@ NPM:-
 *Centralized Repo for js library
 *Used to install 3rd party module
 *Installed module - inside node-module folder  
+
+V-2 :-
+
+What is Nodemon ?
+
+Nodemon is a tool that helps develop node.js based 
+application by automatically vestering the node application
+when file changes in the direction.
