@@ -37,10 +37,14 @@ NPM:-
 *Used to install 3rd party module
 *Installed module - inside node-module folder  
 
-V-2 :-
 
 What is Nodemon ?
 
 Nodemon is a tool that helps develop node.js based 
 application by automatically vestering the node application
 when file changes in the direction.
+
+What is json web token ?
+
+JWT is an open standard (RFC : 7519) that defines a compact and self-contained
+way for securly transmitting information between parties as a json object.

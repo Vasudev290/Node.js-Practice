@@ -13,6 +13,7 @@
     "bcryptjs": "^2.4.3",
     "express": "^4.19.2",
     "gitignore-parser": "^0.0.2",
+    "jsonwebtoken": "^9.0.2",
     "mongodb": "^6.7.0",
     "nodemon": "^3.1.4"
   }
