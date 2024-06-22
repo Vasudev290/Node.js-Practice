@@ -48,3 +48,18 @@ What is json web token ?
 
 JWT is an open standard (RFC : 7519) that defines a compact and self-contained
 way for securly transmitting information between parties as a json object.
+
+What is Express ?
+
+-Node js web framework.
+-Opensource framework devloped and maintained by Node.js foundation.
+-Express is minimal, fast and flixible node.js web framework, 
+ that provides set of featuers for web development.
+-Impliment routing, HTTP Server, protocal, Url
+-npm install express
+***Hapi.js - Best Alternative for express
+
+Why Express ?
+
+-Easily set the backend Api.
+-It is very flixible

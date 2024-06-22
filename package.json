@@ -4,6 +4,7 @@
   "description": "\"# Node.js-Practice\"",
   "main": "index.js",
   "scripts": {
+    "start": "nodemon App.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -12,7 +13,6 @@
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "express": "^4.19.2",
-    "gitignore-parser": "^0.0.2",
     "jsonwebtoken": "^9.0.2",
     "mongodb": "^6.7.0",
     "nodemon": "^3.1.4"
