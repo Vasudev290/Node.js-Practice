@@ -63,3 +63,30 @@ Why Express ?
 
 -Easily set the backend Api.
 -It is very flixible
+
+Node js Api:-
+
+SQL:- (Relation datbase management system)
+
+-We are storing data in the form of tables(Rows and colums)
+-Schema based
+-Memory wastage very highly
+
+Problem Statement:-
+------------------
+-New method to manage the flood of data.
+-Alternative to relation database management system - sql database
+-different from traditional database
+
+What is database ;-
+-physical data container
+-tables
+-rows and colums
+
+MongoDB (Kind of No SQL);-
+Opensource document based database management system tool that store data in json like format
+
+featuers of MongoDB :-
+-fast -json like -less Memory wastage -Schema less database(optional)
+-highly scalable, flixible and distributed
+-application driven database

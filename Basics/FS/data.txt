@@ -1,0 +1,4 @@
+Surface Pro 7 is good for coding and development when used for smaller projects.
+But if you want to do big web/app development projects, juggling between various 
+tabs on your browser and apps on windows, this is not a good device for you.
+I'd suggest going for Surface Laptop 4 with a minimum 16 gig configuration.
