@@ -6,7 +6,7 @@ const server = http.createServer((req, resp) => {
     resp.writeHead(200, {'content-type':'application/json'});
 
     //Sending the data
-    resp.end("My First HTTP interaction")
+    resp.end("My First HTTP interaction....!")
 });
 
 const PORT = 3000;
