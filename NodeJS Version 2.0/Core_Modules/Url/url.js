@@ -14,3 +14,25 @@ Parsed URL host : localhost.com
 Parsed URL pathName : /path
 Parsed URL query : [Object: null prototype] { query: 'value' }
 Parsed URL hash : #fregment */
+
+//use case 2 => resolve a path
+
+const baseUrl = "https://localhost.com/documnets";
+const relativeUrl = "file.txt";
+
+const finalUrl = url.resolve(baseUrl, relativeUrl);
+console.log(finalUrl); //https://localhost.com/file.txt
+
+//use case 3 => extract qurey parameter;
+
+const query = "https://localhost.com/path?query=someValue&id=123";
+const parseUrlQuery = url.parse(query, true);
+console.log(parseUrlQuery.query);
+
+const searchParams = new URLSearchParams(parseUrlQuery.query);
+console.log(searchParams.get("query"));
+console.log(searchParams.get("id"));
+
+/* [Object: null prototype] { query: 'someValue', id: '123' }
+someValue
+123 */
