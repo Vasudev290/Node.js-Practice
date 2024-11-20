@@ -6,6 +6,11 @@ router.get("/", (req, res) => {
     res.send("Getting all the user details from user")
 });
 
+//Dynamic  Router
+router.get('/user-details/:id', (req, res) => {
+    res.send("Get Request for Specific User"+ req.params.id);
+});
+
 // /orders get-user-details
 router.get("/get-user-details", (req, res) => {
     const userDetails= {
