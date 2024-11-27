@@ -1,0 +1,6 @@
+
+
+FS Theory
+=========
+ReadFile() Method. In Node, the fs (File System) module provides a collection of methods for interacting with the file system. 
+Among these methods, fs. readFile() stands out as a fundamental tool for reading data from files asynchronously.
