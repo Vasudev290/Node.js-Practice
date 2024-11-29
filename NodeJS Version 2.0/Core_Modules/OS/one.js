@@ -1,5 +1,5 @@
 const os = require('os');
-const path = require('path');
+//const path = require('path');
 
 console.log(os.type());
 console.log(os.version());
