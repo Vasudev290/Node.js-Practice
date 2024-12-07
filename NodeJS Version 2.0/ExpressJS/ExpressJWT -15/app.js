@@ -23,23 +23,6 @@ const users = [{
 }
 ]
 
-const verifyUser = (req, res, next) => {
-    const userToken = req.headers.authorization
-    if(userToken) {
-        const token = userToken.split(" ")[1]
-        jwt.verify(token, secretKey, (err, user) => {
-            if(err) {
-                return res.status(403).json({err: "token is not valid"})
-            }
-            req.user = user
-            next()
-        })
-    } else{
-        res.status(401).json("You are not authenticated")
-    }
-}
-
-//Post
 app.post('/api/login', (req, res) => {
     const {username, password} =req.body;
     const user = users.find((person) => {
@@ -58,18 +41,10 @@ app.post('/api/login', (req, res) => {
             accessToken
         })
     } else{
-        res.status(401).json("User crenditials not matched..!")
+        res.status(401).json("User crential not matched..!")
     }
 });
 
-//Delete
-app.delete('/api/users/:Uid', verifyUser,(req, res) => {
-    if(req.user.id === req.params.Uid || req.user.isAdmin){
-        res.status(200).json("User is deleted successfull...!")
-    }else {
-        res.status(404).json("you are not allowed to delete..!")
-    }
-});
 
 app.listen(PORT, () => {
     console.log(`Server started and running @ ${PORT}`)
