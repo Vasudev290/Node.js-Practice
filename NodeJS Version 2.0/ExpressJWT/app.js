@@ -42,6 +42,7 @@ const verifyUser = (req, res, next) => {
     }
 }
 
+//Routes Method
 app.get("/vasu", (req, res) => {
     res.render("vasu")
 });
@@ -105,7 +106,7 @@ app.post('/api/logout', (req, res) => {
 })
 
 //Get
-app.get('/api/login/:Uid', (req, res) => {
+app.get('/api/login/ :Uid', (req, res) => {
     const userId = req.params.Uid
     if(userId){
         if(userId === "1"){
