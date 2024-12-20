@@ -1,4 +1,5 @@
-const express = require('express'); //1st step
+//1st step
+const express = require('express');
 const dotEnv = require('dotenv');
 const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
