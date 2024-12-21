@@ -1,0 +1,10 @@
+{
+  "type": "module",
+  "scripts": {
+    "start": "nodemon hash.js"
+  },
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "nodemon": "^3.1.9"
+  }
+}
