@@ -1,4 +1,5 @@
 import express from 'express'
+import fs from 'fs'
 const router = express.Router()
 
 
@@ -9,7 +10,20 @@ Required Fields:None
 Access Type:Public 
 */
 router.post('/create', (req, res) => {
-    return res.json({'employee': 'Created employee success..!'})
+    let emp_data = req.body;
+    console.log(emp_data)
+    let employees = getEmployee();
+    let emp = employees.find((employee) => {
+        return employee.empId == emp_data.eid})
+        console.log(emp_data)
+    if(emp) {
+        return res.json({"Message": "Employee Already existed"})
+    }
+    employees.push(emp_data)
+    console.log(employees)
+    createEmployee(employees)
+
+    return res.json({"msg": "New Employee Created"})
 })
 
 /*
@@ -18,8 +32,9 @@ Method:GET
 Required Fields:None 
 Access Type:Public 
 */
-router.get('/read', (req, res) => {
-    return res.json({'employee': 'Getting all the employees'})
+router.get('/read', async (req, res) => {
+    let employees = await getEmployee();
+    return res.json(employees)
 })
 
 /*
@@ -33,13 +48,34 @@ router.put('/update/eid', (req, res) => {
 })
 
 /*
-URL : http://127.0.0.1:8000/emp/delete/eid
+URL : http://127.0.0.1:8000/emp/delete/101
 Method:Delete
 Required Fields:None 
 Access Type:Public 
 */
-router.delete('/delete/eid', (req, res) => {
-    return res.json({'employee': "Employee details delete Success!" })
+router.delete('/delete/:eid', async (req, res) => {
+    let emp_id = req.params.eid;
+    console.log(emp_id);
+    let employees = await getEmployee();
+    let emp = employees.find(employee => employee.empId == emp_id)
+    if(!emp){
+        return res.json({"msg": "Employee Already exists"})
+    }
+    let remining_Employee = employees.filter(employee => employee.empId != emp_id)
+    console.log(remining_Employee);
+    await createEmployee(remining_Employee)
+    return res.json({"Msg": "Employee Record Deleted!"})
 })
 
-export default router
+
+//All Employee Data
+let getEmployee = () => {
+    let emp_data = fs.readFileSync('emp.json', 'utf-8')
+    return JSON.parse(emp_data)
+}
+
+//Createing Method
+let createEmployee = (employees) => {
+    fs.writeFileSync('emp.json', JSON.stringify(employees))
+}
+export default router;

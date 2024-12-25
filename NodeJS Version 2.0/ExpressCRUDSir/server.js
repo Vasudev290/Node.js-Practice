@@ -9,7 +9,7 @@ dotenv.config({path : './Config/dev.env'})
 let port = process.env.PORT
 let host = process.env.HOSTNAME
 
-
+app.use(express.json())
 app.use(morgan('tiny'))
 app.use('/emp', api)
 
