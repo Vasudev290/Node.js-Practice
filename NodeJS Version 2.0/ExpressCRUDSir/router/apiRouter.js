@@ -50,14 +50,12 @@ router.get("/read/:eid",async(req,resp)=>{
 	let emp_Id = req.params.eid;
 
 	//verify employee exist or not.
-
-	let employees = await getEmployee();
+    let employees = await getEmployee();
 	let employee = employees.find((employee)=>{return employee.eid == emp_Id})
 	if(!employee){
 	    return resp.json({"error":"Not Exits"})
 	}
 	return resp.json(employee)
-
 })
 
 
