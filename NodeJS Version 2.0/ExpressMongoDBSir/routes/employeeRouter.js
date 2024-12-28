@@ -16,7 +16,7 @@ Access Type:Public
 router.get('/read', async (req, res) => {
     try{
         let Employees = await EmployeeModel.find()
-        return res.json({"Status": 200,"message":"Getting all the Employees", "Employee_Result": Employees.length ,"Employees":Employees})
+        return res.json({"Status": 200, "message":"Getting all the Employees", "Employee_Result": Employees.length ,"Employees":Employees})
     } catch(err) {
         return res.json({"Message": err.Message})
     }
@@ -86,5 +86,6 @@ router.delete('/delete/:emp_Id', async (req, res) => {
         return res.json({"message":err.message})
     }
 });
+
 
 export default router;
