@@ -1,0 +1,16 @@
+{
+  "name": "expressapis",
+  "version": "1.0.0",
+  "description": "Api Creation",
+  "license": "ISC",
+  "author": "Vasu",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js"
+    },
+  "dependencies": {
+    "express": "^4.21.2",
+    "nodemon": "^3.1.9"
+  }
+}
