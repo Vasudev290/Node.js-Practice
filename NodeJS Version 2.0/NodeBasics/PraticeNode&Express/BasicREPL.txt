@@ -1,0 +1,24 @@
+C:\Users\vasuk>node
+Welcome to Node.js v20.18.0.
+Type ".help" for more information.
+> 2+3
+5
+> const a = "apple"
+undefined
+> a
+'apple'
+> function calc(a, b){
+... return a+b
+...
+... calc(10, 20)
+...
+>
+> function calc(a, b){
+... return a+b
+... }
+undefined
+> calc(10, 20)
+30
+>
+
+In CMD, We can write and use the node with javaScript mmodule.
