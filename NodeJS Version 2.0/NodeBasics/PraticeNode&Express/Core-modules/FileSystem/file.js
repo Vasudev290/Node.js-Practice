@@ -30,10 +30,10 @@ fs.appendFile("text.txt", "Thank You for staying and till the end..!", (err) => 
 });
 
 //Delete file
-// fs.unlink('Ex.txt', (err) => {
-//     if(err){
-//         console.log(err)
-//     }else{
-//         console.log("File Deleted Successfull!")
-//     }
-// });
+fs.unlink('Ex.txt', (err) => {
+    if(err){
+        console.log(err)
+    }else{
+        console.log("File Deleted Successfull!")
+    }
+});
