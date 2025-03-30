@@ -1,12 +1,23 @@
 const express = require('express');
+const dotenv = require('dotenv');
+const { MongoClient } = require('mongodb')
 const app = express()
 
+dotenv.config();
 
-app.get('/', (req, res) => {
-    res.send("<h1>Welcome to Node and Express Js</h1>")
+MongoClient.connect( process.env.MONGO_DB_URL )
+.then(() => {
+    console.log("MongoDB Connected Successfully")
 })
-const port = 5000;
+.catch((err) => {
+    console.log("Error :", err)
+})
 
-app.listen(port, () => {
-    console.log("Server Started and Running Successfull..!")
+
+
+
+const PORT = 5000;
+app.listen(PORT, () => {
+    console.log(`Server Started and Running at port ${PORT} Successfull`)
 })
+
