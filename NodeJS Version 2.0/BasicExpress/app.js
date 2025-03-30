@@ -1,23 +1,33 @@
-const express = require('express');
-const dotenv = require('dotenv');
-const { MongoClient } = require('mongodb')
-const app = express()
+const express = require("express");
+const dotenv = require("dotenv");
+const mongoose = require("mongoose");
+const bodyParser = require("body-parser");
+const { MongoClient } = require("mongodb");
+
+const app = express();
 
 dotenv.config();
 
-MongoClient.connect( process.env.MONGO_DB_URL )
-.then(() => {
-    console.log("MongoDB Connected Successfully")
-})
-.catch((err) => {
-    console.log("Error :", err)
-})
+//Direct MongoDB Connect
+// MongoClient.connect( process.env.MONGO_DB_URL )
+// .then(() => {
+//     console.log("MongoDB Connected Successfully")
+// })
+// .catch((err) => {
+//     console.log("Error :", err)
+// })
 
+//With using of Mongoose
+mongoose
+  .connect(process.env.MONGO_DB_URL)
+  .then(() => {
+    console.log("MongoDB Connected Successfully..!");
+  })
+  .catch((err) => {
+    console.log("Error :", err);
+  });
 
-
-
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
-    console.log(`Server Started and Running at port ${PORT} Successfull`)
-})
-
+  console.log(`Server Started and Running at port ${PORT} Successfull`);
+});
