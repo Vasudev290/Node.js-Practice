@@ -2,12 +2,15 @@ const express = require("express");
 const dotenv = require("dotenv");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
+const cors = require("cors");
 const { MongoClient } = require("mongodb");
 const employeeRoutes = require('./routes/employeeRouter')
 
 const app = express();
+app.use(cors)
 
 dotenv.config();
+
 app.use(bodyParser.json())
 
 //Direct MongoDB Connect

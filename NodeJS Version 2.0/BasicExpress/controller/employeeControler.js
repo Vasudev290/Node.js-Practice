@@ -12,7 +12,7 @@ const createEmployee = async (req, res) => {
       city,
     });
     await employee.save();
-    res.status(200).json(employee);
+    res.status(200).json({message: "New Employee Created Successfull", employee});
   } catch (err) {
     console.log("There was an Error :", err);
     res.status(500).json({ message: "Server Error!" });
@@ -23,13 +23,11 @@ const createEmployee = async (req, res) => {
 const readEmployee = async (req, res) => {
   try {
     const employees = await EmployeeModel.find();
-    res
-      .status(200)
-      .json({
-        message: "All Employees Details",
-        No_of_employees: employees.length,
-        employees,
-      });
+    res.status(200).json({
+      message: "All Employees Details",
+      No_of_employees: employees.length,
+      employees,
+    });
   } catch (err) {
     console.log("There was an error", err);
     res.status(500).json("Server Error!");
@@ -69,25 +67,30 @@ const updateEmployee = async (req, res) => {
     console.log("There was an Error", err);
     res.status(500).json({ message: "Server Error..!" });
   }
-};  
+};
 
 //DELETE METHOD
-const deleteEmployee = async(req, res) => {
-    try{
-        const delEmployee = await EmployeeModel.findByIdAndDelete(req.params.id)
-        if(!delEmployee){
-            return res.status(404).json("Employee not Found")
-        }
-        res.status(200).json({message: "Employee Deleted Successfully!", Deleted_Employee : delEmployee})
-    }catch(err){
-        console.log("There was an Error", err)
-        res.status(500).json({message: "Server Error..!"})
+const deleteEmployee = async (req, res) => {
+  try {
+    const delEmployee = await EmployeeModel.findByIdAndDelete(req.params.id);
+    if (!delEmployee) {
+      return res.status(404).json("Employee not Found");
     }
-}
+    res
+      .status(200)
+      .json({
+        message: "Employee Deleted Successfully!",
+        Deleted_Employee: delEmployee,
+      });
+  } catch (err) {
+    console.log("There was an Error", err);
+    res.status(500).json({ message: "Server Error..!" });
+  }
+};
 module.exports = {
   createEmployee,
   readEmployee,
   singleEmployee,
   updateEmployee,
-  deleteEmployee
+  deleteEmployee,
 };
